@@ -3,17 +3,12 @@ import numpy as np
 
 a = cv2.imread('barbara.tif', cv2.IMREAD_GRAYSCALE)
 
-# Downscale
+# Resize Image
 b = cv2.resize(a, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_LINEAR)
-
-cv2.imwrite('downscale_image.png', b)
-cv2.imshow('Downscale Image', b / np.max(b))
-
-# Upscale
 c = cv2.resize(b, None, fx=4, fy=4, interpolation=cv2.INTER_LINEAR)
 
-cv2.imwrite('upscale_image.png', c)
-cv2.imshow('Upscale Image', c / np.max(c))
+cv2.imwrite('resized_image.png', c)
+cv2.imshow('Resized Image', c / np.max(c))
 
 H = np.zeros((512, 512))
 H[256-64:256+64, 256-64:256+64] = 1
