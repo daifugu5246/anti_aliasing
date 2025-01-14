@@ -24,6 +24,6 @@ d = np.real(np.fft.ifft2(Dd))
 
 # result
 cv2.imwrite('filtered_image.png', d)
-cv2.imshow('Filtered Image', d / np.max(d))  # Normalize for display
+cv2.imshow('Filtered Image', d / np.max(d))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
